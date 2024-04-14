@@ -15,9 +15,10 @@ public:
 	MCP4xxxx(const int& CS, const int& MOSI, const int& SCK);
 	MCP4xxxx(const int& CS);
 	
-    void begin();
+	void begin(void);
     void writeValue(const int& value);
     void setOff();
+	~MCP4xxxx();
 
 private:
     volatile unsigned char MSb;
@@ -28,6 +29,7 @@ private:
     int MOSIpin;
     uint32_t speedW;
     uint8_t spimode;
+	bool    _hardwareSPI; // true if SPI interface is the hardware interface
 };
 
 #endif
