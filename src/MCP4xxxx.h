@@ -15,7 +15,7 @@ public:
 	MCP4xxxx(const int& CS, const int& MOSI, const int& SCK);
 	MCP4xxxx(const int& CS);
 	
-	void begin();
+    void begin();
     void writeValue(const int& value);
     void setOff();
 
