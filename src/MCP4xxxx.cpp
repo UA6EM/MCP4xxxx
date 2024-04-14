@@ -18,8 +18,8 @@
     SCKpin = SCK;
     speedW = maxSpeedWrite;
     spimode = SPIMode;
-    pinMode(CSpin, OUTPUT);
-    digitalWrite(CSpin, HIGH);
+	pinMode(CSpin, OUTPUT);
+	digitalWrite(CSpin, HIGH);
 }
 
  MCP4xxxx::MCP4xxxx(const int& CS, const int& MOSI, const int& SCK) {
@@ -29,7 +29,7 @@
     speedW = MAX_SPEED_WRITE; // 250 kHz
     spimode = SPI_MODE0;
     pinMode(CSpin, OUTPUT);
-    digitalWrite(CSpin, HIGH);
+	digitalWrite(CSpin, HIGH);
 }
 
  MCP4xxxx::MCP4xxxx(const int& CS) {
@@ -39,13 +39,19 @@
     speedW = MAX_SPEED_WRITE; // 250 kHz
     spimode = SPI_MODE0;
     pinMode(CSpin, OUTPUT);
-    digitalWrite(CSpin, HIGH);
+	digitalWrite(CSpin, HIGH);
+	_hardwareSPI = true;      // true if SPI interface is the hardware interface
 }
 
 void MCP4xxxx::begin(void){
-// only hardware SPI
-SPI.begin();	
+	SPI.begin();
 }
+
+void ~MCP4xxxx(void)
+{
+  if (_hardwareSPI) 			// прибить объект SPI (hardware SPI)	
+    SPI.end(); 
+};
 
 void MCP4xxxx::writeValue(const int& value) {
     SPI.beginTransaction(SPISettings(speedW, MSBFIRST, spimode));
