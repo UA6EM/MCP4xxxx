@@ -12,11 +12,10 @@ class MCP4xxxx
 {
 public:
 	MCP4xxxx(const int& CS, const int& MOSI, const int& SCK, const uint32_t& maxSpeedWrite, const uint8_t& SPIMode);
-
 	MCP4xxxx(const int& CS, const int& MOSI, const int& SCK);
-
 	MCP4xxxx(const int& CS);
-
+	
+	void begin();
     void writeValue(const int& value);
     void setOff();
 
