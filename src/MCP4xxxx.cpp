@@ -47,7 +47,7 @@ void MCP4xxxx::begin(void){
 	SPI.begin();
 }
 
-void MCP4xxxx::~MCP4xxxx(void)
+ MCP4xxxx::~MCP4xxxx(void)
 {
   if (_hardwareSPI) 			// прибить объект SPI (hardware SPI)	
     SPI.end(); 
