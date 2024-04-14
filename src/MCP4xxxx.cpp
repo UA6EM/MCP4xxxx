@@ -43,9 +43,8 @@
 }
 
 void MCP4xxxx::begin(void){
-	
-SPI.begin();
-	
+// only hardware SPI
+SPI.begin();	
 }
 
 void MCP4xxxx::writeValue(const int& value) {
