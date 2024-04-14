@@ -52,7 +52,8 @@ void testMCP41010() {
 
 void setup() {
   Serial.begin(115200);
-  SPI.begin();
+  Potentiometer.begin();
+  Alc.begin();
   testMCP41010();
 }
 
