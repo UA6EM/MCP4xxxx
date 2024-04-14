@@ -18,8 +18,8 @@
     SCKpin = SCK;
     speedW = maxSpeedWrite;
     spimode = SPIMode;
-	pinMode(CSpin, OUTPUT);
-	digitalWrite(CSpin, HIGH);
+    pinMode(CSpin, OUTPUT);
+    digitalWrite(CSpin, HIGH);
 }
 
  MCP4xxxx::MCP4xxxx(const int& CS, const int& MOSI, const int& SCK) {
@@ -29,7 +29,7 @@
     speedW = MAX_SPEED_WRITE; // 250 kHz
     spimode = SPI_MODE0;
     pinMode(CSpin, OUTPUT);
-	digitalWrite(CSpin, HIGH);
+    digitalWrite(CSpin, HIGH);
 }
 
  MCP4xxxx::MCP4xxxx(const int& CS) {
@@ -39,11 +39,13 @@
     speedW = MAX_SPEED_WRITE; // 250 kHz
     spimode = SPI_MODE0;
     pinMode(CSpin, OUTPUT);
-	digitalWrite(CSpin, HIGH);
+    digitalWrite(CSpin, HIGH);
 }
 
 void MCP4xxxx::begin(void){
-	SPI.begin();
+	
+SPI.begin();
+	
 }
 
 void MCP4xxxx::writeValue(const int& value) {
