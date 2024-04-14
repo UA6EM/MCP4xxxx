@@ -43,7 +43,7 @@
 }
 
 void MCP4xxxx::begin(void){
-	SPI.begin()
+	SPI.begin();
 }
 
 void MCP4xxxx::writeValue(const int& value) {
