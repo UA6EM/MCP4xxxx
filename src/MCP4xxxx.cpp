@@ -1,6 +1,6 @@
 /*
  * MCP4xxxx Library for Arduino
- * v0.1
+ * v0.2
  * MIT License
  * (c) 2024 UA6EM
  */
